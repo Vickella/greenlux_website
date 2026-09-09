@@ -1,0 +1,13 @@
+YITTA Website Preview and UI Fix Report
+
+Actions completed:
+1. Changed Promotions links from https://youthinit.co.zw/app/ to https://youthinit.co.zw to avoid the live 404 shown in the browser screenshot.
+2. Updated all footer Promotions links and JSON LD sameAs references to the root domain only.
+3. Refactored all cards that had icon above heading so the icon and heading now sit on the same line.
+4. Increased the red Y in the header and footer YITTA wordmark for stronger brand visibility.
+5. Strengthened fixed header background and blur to stop hero content from visually bleeding into the nav area.
+6. Added spacing after page heroes so section headings and cards do not appear trapped behind the sticky header.
+7. Preserved the template layout, page structure, YITTA colour system and SEO metadata.
+
+Preview status:
+Local preview was run against index.html, about.html, services.html, programs.html, gallery.html and contact.html at desktop and mobile widths. The main issues observed were corrected in CSS and HTML.
