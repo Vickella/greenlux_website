@@ -132,8 +132,8 @@
       ['Inspection and care', 'Maintenance', 'solar-maintenance-technician.webp', 'Technical inspection, fault-finding and maintenance that protect performance after installation.']
     ];
     return pageHero('Projects and capabilities', 'See the disciplines behind <span>dependable systems.</span>', 'A closer look at the kinds of solar, electrical, industrial and water infrastructure GreenLux is equipped to plan, install and maintain.', 'solar-maintenance-technician.webp', '<div class="actions"><a class="btn btn-primary" href="contact.html">Discuss your project</a></div>', '64% center') +
-      `<section class="section"><div class="container"><div class="section-head"><span class="eyebrow">Capability portfolio</span><h2>Practical work across connected systems.</h2><p>The supplied imagery is presented as a clear view of GreenLux capability—not as invented client case studies or unsupported performance claims.</p></div><div class="grid grid-3">${items.map(item => `<article class="card gallery-card"><img loading="lazy" src="${imagePath + item[2]}" alt="GreenLux ${item[0]}"><div><span class="eyebrow">${item[1]}</span><h3>${item[0]}</h3><p>${item[3]}</p></div></article>`).join('')}</div></div></section>
-      <section class="section section-soft"><div class="container split"><div><span class="eyebrow">Your project starts here</span><h2>Bring the site, load and ambition into one conversation.</h2><p>Whether the requirement is a focused repair or a new integrated system, an informed first assessment is the best place to begin.</p><a class="btn btn-dark" href="contact.html">Request a site visit</a></div><div class="media"><img loading="lazy" src="${imagePath}engineering-site-planning.webp" alt="Planning an engineering project on site"></div></div></section>`;
+      `<section class="section gallery-section"><div class="container"><div class="section-head"><span class="eyebrow">Capability portfolio</span><h2>Practical work across connected systems.</h2><p>The supplied imagery is presented as a clear view of GreenLux capability—not as invented client case studies or unsupported performance claims.</p></div><div class="grid grid-3">${items.map(item => `<article class="card gallery-card"><img loading="lazy" src="${imagePath + item[2]}" alt="GreenLux ${item[0]}"><div><span class="eyebrow">${item[1]}</span><h3>${item[0]}</h3><p>${item[3]}</p></div></article>`).join('')}</div></div></section>
+      <section class="section section-soft project-cta"><div class="container split"><div><span class="eyebrow">Your project starts here</span><h2>Bring the site, load and ambition into one conversation.</h2><p>Whether the requirement is a focused repair or a new integrated system, an informed first assessment is the best place to begin.</p><a class="btn btn-dark" href="contact.html">Request a site visit</a></div><div class="media"><img loading="lazy" src="${imagePath}engineering-site-planning.webp" alt="Planning an engineering project on site"></div></div></section>`;
   }
 
   function contact() {
@@ -282,6 +282,12 @@
     const pages = {home, services: servicesPage, about, solutions, projects, contact, planning};
     const content = pages[page] || home;
     document.getElementById('site').innerHTML = header() + `<main>${content()}</main>` + footer();
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href || href.startsWith('#') || /^(?:https?:|tel:|mailto:)/.test(href)) return;
+      const cleanHref = href.replace(/^index\.html/, '').replace(/\.html(?=[?#]|$)/, '');
+      link.setAttribute('href', cleanHref ? `/${cleanHref.replace(/^\//, '')}` : '/');
+    });
     bindInteractions();
   }
 
