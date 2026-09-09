@@ -42,7 +42,7 @@
   }
 
   function footer() {
-    return `<footer class="site-footer">
+    return `<footer class="site-footer" id="site-footer">
       <div class="footer-main">
         <div class="container footer-grid">
           <div>
@@ -54,7 +54,7 @@
           <div><h3>Start a conversation</h3><p>Call or WhatsApp</p><p><a class="footer-contact" href="tel:+263788997670">078 899 7670</a></p><a class="btn btn-primary" href="contact.html">Request a site visit</a></div>
         </div>
       </div>
-      <div class="container footer-bottom"><span>&copy; 2026 GreenLux Electrical Engineering (Pvt) Ltd</span><span>Designed by <a href="https://veritycore.co.zw" target="_blank" rel="noopener noreferrer">VerityCore Consultancy</a></span></div>
+      <div class="container footer-bottom"><span class="footer-copyright">&copy; 2026 GreenLux Electrical Engineering (Pvt) Ltd</span><span class="footer-credit">Designed by <a href="https://veritycore.co.zw" target="_blank" rel="noopener noreferrer">VerityCore Consultancy</a></span></div>
     </footer>
     <a class="whatsapp" href="${whatsappUrl}" target="_blank" rel="noopener noreferrer" aria-label="Chat with GreenLux on WhatsApp" title="Chat with GreenLux">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.8 7.3L3.5 20l1.2-4A8.5 8.5 0 1 1 20.5 11.5Z"></path><path d="M8.5 8.5c.2-.5.5-.5.8-.5h.5c.2 0 .4.1.5.4l.6 1.4c.1.3.1.5-.1.7l-.5.6c.8 1.5 1.8 2.4 3.3 3.1l.6-.5c.2-.2.4-.2.7-.1l1.3.6c.3.1.4.3.4.5v.5c0 .3-.1.6-.5.8-.5.2-1.1.3-1.7.1-2.1-.6-4.9-3.3-5.9-5.4-.3-.7-.3-1.4 0-2.2Z"></path></svg>
